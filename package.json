@@ -1,6 +1,6 @@
 {
-  "name": "@codestates/submission-npm",
-  "version": "1.0.5",
+  "name": "@codestates-cc/submission-npm",
+  "version": "1.0.7",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -14,13 +14,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/codestates/codestates-submission-npm.git"
+    "url": "git://github.com/codestates-cc/submission-npm.git"
   },
   "keywords": [],
   "author": "Hoyong Lee",
   "license": "ISC",
   "dependencies": {
+    "archiver": "^5.1.0",
     "axios": "^0.21.0",
+    "base64-stream": "^1.0.0",
+    "get-stream": "^6.0.0",
     "prompt": "^1.0.0"
   }
 }
