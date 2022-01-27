@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "commit": "cz"
   },
   "bin": {
     "codestates": "bin/assignment-manager"
@@ -29,6 +29,7 @@
     "yargs": "^16.1.1"
   },
   "devDependencies": {
+    "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0"
   },
   "config": {
