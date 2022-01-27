@@ -1,5 +1,5 @@
 {
-  "name": "@codestates-cc/submission-npm",
+  "name": "@codestates/assignment-manager",
   "version": "1.1.4",
   "description": "",
   "main": "index.js",
@@ -7,14 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "codestates-submission": "bin/codestates-submission"
+    "codestates": "bin/assignment-manager"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/codestates-cc/submission-npm.git"
+    "url": "git://github.com/codestates/assignment-manager.git"
   },
   "keywords": [],
   "author": "Hoyong Lee",
