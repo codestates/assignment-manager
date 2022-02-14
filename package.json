@@ -13,7 +13,12 @@
     "type": "git",
     "url": "git://github.com/codestates/assignment-manager.git"
   },
-  "keywords": ["codestates","bootcamp","assignment-manager","imposter-finder"],
+  "keywords": [
+    "codestates",
+    "bootcamp",
+    "assignment-manager",
+    "imposter-finder"
+  ],
   "author": "codestates_official <communication@codestates.com>",
   "bugs": {
     "url": "https://github.com/codestates/assignment-manager/issues",
@@ -26,16 +31,11 @@
     "base64-stream": "^1.0.0",
     "get-stream": "^6.0.1",
     "open": "^8.4.0",
-    "prompt": "^1.2.0",
+    "prompt": "^1.2.1",
     "yargs": "^17.3.1"
   },
   "devDependencies": {
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }
