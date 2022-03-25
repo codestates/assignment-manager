@@ -5,7 +5,7 @@ const { existsSync, readFileSync } = require("fs");
 const { getUser } = require('../lib/github')
 const path = require('path')
 const homedir = require('os').homedir();
-const endpoint = 'http://localhost:3000/dev'
+const API_ENDPOINT = 'https://api.codestates-seb.link'
 const { post } = require("axios")
 
 class Reporter {
@@ -41,7 +41,7 @@ class Reporter {
       const token = readFileSync(location).toString()
       getUser(token.split('\n')[0], ({ data }) => {
         console.log('githubId ', data.id)
-        post(endpoint + '/sprint/imposter/bulk', {
+        post(`${API_ENDPOINT}/imposter/bulk-report`, {
           "github_id": data.id,
           "repo_name": packageName,
           "tests": alltests,
@@ -51,6 +51,9 @@ class Reporter {
             console.log(`과제 진행이 추적관리 되고있습니다.`)
           })
           .catch(err => {
+            console.log(err)
+            console.log(err)
+            
             console.log(`과제 진행 추적관리 에러 : ${err.errno? err.errno : -99}`)
           })
       })
