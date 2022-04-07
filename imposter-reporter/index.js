@@ -6,7 +6,7 @@ const { getUser } = require('../lib/github')
 const path = require('path')
 const homedir = require('os').homedir();
 const API_ENDPOINT = 'https://api.codestates-seb.link'
-const { post } = require("axios")
+const { post, default: axios } = require("axios")
 
 class Reporter {
 
@@ -41,12 +41,18 @@ class Reporter {
       const token = readFileSync(location).toString()
       getUser(token.split('\n')[0], ({ data }) => {
         console.log('githubId ', data.id)
-        post(`${API_ENDPOINT}/imposter/bulk-report`, {
-          "github_id": data.id,
-          "repo_name": packageName,
-          "tests": alltests,
-          "at": "2022-02-11 00:00:00"
-        })
+        axios({
+          method:'post',
+          url: `${API_ENDPOINT}/imposter/bulk-report`, 
+          data:{
+            "github_id": data.id,
+            "repo_name": packageName,
+            "tests": JSON.stringify(alltests),
+            "at": new Date().toISOString()
+          },
+          headers: {
+            "x-api-key": "5LvrWvSIME8Z7Qop9Sng55B3JOlcdiUC5Z3TCQcl" // cli-user
+          }})
           .then(res => {
             console.log(`과제 진행이 추적관리 되고있습니다.`)
           })
