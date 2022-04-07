@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/codestates/assignment-manager/compare/v1.2.0...v1.7.0) (2022-04-07)
+
+
+### Features
+
+*  add x-api-key ([20a3f18](https://github.com/codestates/assignment-manager/commit/20a3f18ffcfdeff8931c391a921e989581c33d9e))
+* Mocha Repoter ([d55fcac](https://github.com/codestates/assignment-manager/commit/d55fcac2ddd82a9a90212a6e2ed0bb2425237dc6))
+
+
+### Bug Fixes
+
+* api endpoint ([f6b37b3](https://github.com/codestates/assignment-manager/commit/f6b37b3ee17abd11dc6162b92ba9f2297da96b6e))
+* console message ([873fefa](https://github.com/codestates/assignment-manager/commit/873fefa22dafe2d839ea7b5743c8cea41dda6316))
+* github Authorization bearer ([b69e1ea](https://github.com/codestates/assignment-manager/commit/b69e1eac2f3de0d1590ef27266002f97b506d60f))
+
 ## [1.2.0](https://github.com/codestates/assignment-manager/compare/v1.1.4...v1.2.0) (2022-02-15)
 
 
