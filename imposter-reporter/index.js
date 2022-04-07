@@ -1,12 +1,9 @@
-
-const dotenv = require('dotenv');
-const fs = require('fs');
 const { existsSync, readFileSync } = require("fs");
 const { getUser } = require('../lib/github')
 const path = require('path')
 const homedir = require('os').homedir();
 const API_ENDPOINT = 'https://api.codestates-seb.link'
-const { post, default: axios } = require("axios")
+const { default: axios } = require("axios")
 
 class Reporter {
 
@@ -33,11 +30,13 @@ class Reporter {
         })
       }
     }
-    console.log("Codestates : imposter-repoter ");
+    console.log("\n\nCodestates : imposter-repoter ");
     const packageName = JSON.parse(readFileSync('./package.json').toString('utf-8')).name
-    console.log("Package Name", packageName)
+    console.log("Package Name :", packageName)
     const location = path.join(homedir, '.codestates-token')
-    if (existsSync(location)) {
+    if (!existsSync(location)) {
+      console.log("\n\nCodestates : GitHub 로그인을 완료해주세요. 아래 명령어를 실행해주세요. \n\n $ codestates login \n---------------------\n")
+    } else {
       const token = readFileSync(location).toString()
       getUser(token.split('\n')[0], ({ data }) => {
         console.log('githubId ', data.id)
@@ -57,10 +56,7 @@ class Reporter {
             console.log(`과제 진행이 추적관리 되고있습니다.`)
           })
           .catch(err => {
-            console.log(err)
-            console.log(err)
-            
-            console.log(`과제 진행 추적관리 에러 : ${err.errno? err.errno : -99}`)
+            console.log(`과제 진행 추적관리 에러 : ${err.response.status? err.response.status : -99}`)
           })
       })
     }
