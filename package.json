@@ -25,6 +25,10 @@
     "email": "communication@codestates.com"
   },
   "license": "MIT",
+  "resolutions": {
+    "async": "2.6.4",
+    "minimist": "1.2.6"
+  },
   "dependencies": {
     "archiver": "^5.3.0",
     "aws-sdk": "^2.1100.0",
